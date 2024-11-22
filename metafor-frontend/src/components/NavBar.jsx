@@ -36,7 +36,10 @@ export default function NavBar({ num = 1 }) {
       </Link>
 
       {/* calendar 아이콘 */}
-      <Link to="/profile" className="flex flex-col items-center text-gray-500">
+      <Link
+        to="/customerhome"
+        className="flex flex-col items-center text-gray-500"
+      >
         <div
           className="w-8 h-8"
           style={{
