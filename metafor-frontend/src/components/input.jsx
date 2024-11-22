@@ -13,7 +13,7 @@ export default function Input({
   return (
     <div>
       <input
-        className="w-[334px] h-[56px] p-[20px] bg-gray-50 border-none rounded-[12px] focus:outline-none p-4"
+        className="w-[334px] h-[56px] bg-gray-50 border-none rounded-[12px] focus:outline-none p-4"
         type={type}
         placeholder={placeholder}
         onChange={onChange}
