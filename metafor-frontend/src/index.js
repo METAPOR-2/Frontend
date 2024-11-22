@@ -13,6 +13,8 @@ import Select from "./pages/select";
 import StartPage from "./pages/startPage";
 import reportWebVitals from "./reportWebVitals";
 import DoctorDetail from "./pages/doctorDetail";
+import CustomerHome from "./pages/customerHome";
+import CustomerHomeHospital from "./pages/customerHomeHospital";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -24,12 +26,14 @@ root.render(
       <Route path="/doctorprofile" element={<DoctorProfile />} />
       <Route path="/startpage" element={<StartPage />} />
       <Route path="/license-register" element={<LicenseRegister />} />
-
       <Route path="/doctor-home" element={<DoctorHome />} />
       <Route path="/doctor-search" element={<DoctorSearch />} />
       <Route path="/doctor-detail" element={<DoctorDetail />} />
-
       <Route path="/map" element={<Map />} />
+      <Route path="/map" element={<Map />} />
+      <Route path="/customerhome" element={<CustomerHome />} />
+      <Route path="/customerhomehospital" element={<CustomerHomeHospital />} />
+
     </Routes>
   </BrowserRouter>
 );
