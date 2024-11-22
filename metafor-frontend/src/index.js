@@ -6,14 +6,27 @@ import "./index.css";
 import DoctorHome from "./pages/doctorHome";
 import LicenseRegister from "./pages/license_register";
 import reportWebVitals from "./reportWebVitals";
+import Select from "./pages/select";
+import Login from "./pages/login";
+import DoctorProfile from "./pages/doctorProfile";
+import StartPage from "./pages/startPage";
+import Map from "./pages/map";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />} />
+      <Route path="/select" element={<Select />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/doctorprofile" element={<DoctorProfile />} />
+      <Route path="/startpage" element={<StartPage />} />
       <Route path="/license-register" element={<LicenseRegister />} />
+
       <Route path="/doctor-home" element={<DoctorHome />} />
+
+      <Route path="/map" element={<Map />} />
+
     </Routes>
   </BrowserRouter>
 );
