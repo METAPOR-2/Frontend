@@ -4,14 +4,15 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import App from "./App";
 import "./index.css";
 import DoctorHome from "./pages/doctorHome";
-import LicenseRegister from "./pages/license_register";
-import reportWebVitals from "./reportWebVitals";
-import Select from "./pages/select";
-import Login from "./pages/login";
 import DoctorProfile from "./pages/doctorProfile";
-import StartPage from "./pages/startPage";
-import Hospitals from "./pages/Hospital";
+import DoctorSearch from "./pages/doctorSearch";
+import LicenseRegister from "./pages/license_register";
+import Login from "./pages/login";
 import Map from "./pages/map";
+import Select from "./pages/select";
+import StartPage from "./pages/startPage";
+import reportWebVitals from "./reportWebVitals";
+import DoctorDetail from "./pages/doctorDetail";
 import CustomerHome from "./pages/customerHome";
 import CustomerHomeHospital from "./pages/customerHomeHospital";
 
@@ -26,10 +27,13 @@ root.render(
       <Route path="/startpage" element={<StartPage />} />
       <Route path="/license-register" element={<LicenseRegister />} />
       <Route path="/doctor-home" element={<DoctorHome />} />
-      <Route path="/hospital" element={<Hospitals />} />
+      <Route path="/doctor-search" element={<DoctorSearch />} />
+      <Route path="/doctor-detail" element={<DoctorDetail />} />
+      <Route path="/map" element={<Map />} />
       <Route path="/map" element={<Map />} />
       <Route path="/customerhome" element={<CustomerHome />} />
       <Route path="/customerhomehospital" element={<CustomerHomeHospital />} />
+
     </Routes>
   </BrowserRouter>
 );

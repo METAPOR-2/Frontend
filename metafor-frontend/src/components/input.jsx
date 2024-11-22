@@ -16,9 +16,11 @@ export default function Input({
       )}
       {/* 입력 필드 */}
       <input
+
         className={`w-full h-full ${
           Icon ? "pl-12" : "pl-4"
         } pr-4 bg-gray-50 border-none rounded-[12px] focus:outline-none placeholder-gray-500 text-[16px]`}
+
         type={type}
         placeholder={placeholder}
       />
