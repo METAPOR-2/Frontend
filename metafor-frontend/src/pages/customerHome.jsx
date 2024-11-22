@@ -63,7 +63,7 @@ export default function CustomerHome() {
           ))}
         </div>
 
-        <NavBar />
+        <NavBar num={3} />
       </div>
     </div>
   );

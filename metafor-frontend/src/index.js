@@ -13,6 +13,7 @@ import StartPage from "./pages/startPage";
 import Hospitals from "./pages/Hospital";
 import Map from "./pages/map";
 import CustomerHome from "./pages/customerHome";
+import CustomerHomeHospital from "./pages/customerHomeHospital";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -28,6 +29,7 @@ root.render(
       <Route path="/hospital" element={<Hospitals />} />
       <Route path="/map" element={<Map />} />
       <Route path="/customerhome" element={<CustomerHome />} />
+      <Route path="/customerhomehospital" element={<CustomerHomeHospital />} />
     </Routes>
   </BrowserRouter>
 );
