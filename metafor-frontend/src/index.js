@@ -12,6 +12,7 @@ import DoctorProfile from "./pages/doctorProfile";
 import StartPage from "./pages/startPage";
 import Map from "./pages/map";
 import CustomerHome from "./pages/customerHome";
+import CustomerHomeHospital from "./pages/customerHomeHospital";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -26,6 +27,7 @@ root.render(
       <Route path="/doctor-home" element={<DoctorHome />} />
       <Route path="/map" element={<Map />} />
       <Route path="/customerhome" element={<CustomerHome />} />
+      <Route path="/customerhomehospital" element={<CustomerHomeHospital />} />
     </Routes>
   </BrowserRouter>
 );
