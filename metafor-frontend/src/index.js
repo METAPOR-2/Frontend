@@ -20,7 +20,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<App />} />
+      <Route path="/" element={<StartPage />} />
       <Route path="/select" element={<Select />} />
       <Route path="/login" element={<Login />} />
       <Route path="/doctorprofile" element={<DoctorProfile />} />
@@ -33,7 +33,6 @@ root.render(
       <Route path="/map" element={<Map />} />
       <Route path="/customerhome" element={<CustomerHome />} />
       <Route path="/customerhomehospital" element={<CustomerHomeHospital />} />
-
     </Routes>
   </BrowserRouter>
 );
