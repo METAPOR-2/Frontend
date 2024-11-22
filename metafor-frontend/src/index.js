@@ -11,6 +11,7 @@ import Login from "./pages/login";
 import DoctorProfile from "./pages/doctorProfile";
 import StartPage from "./pages/startPage";
 import Map from "./pages/map";
+import CustomerHome from "./pages/customerHome";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -22,11 +23,9 @@ root.render(
       <Route path="/doctorprofile" element={<DoctorProfile />} />
       <Route path="/startpage" element={<StartPage />} />
       <Route path="/license-register" element={<LicenseRegister />} />
-
       <Route path="/doctor-home" element={<DoctorHome />} />
-
       <Route path="/map" element={<Map />} />
-
+      <Route path="/customerhome" element={<CustomerHome />} />
     </Routes>
   </BrowserRouter>
 );

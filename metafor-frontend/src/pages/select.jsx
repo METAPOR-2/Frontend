@@ -24,7 +24,7 @@ export default function Select() {
           <div className="text-[24px] font-normal font-semibold leading-normal mt-[43px]">
             의학 분야를 선택해 주세요.
           </div>
-          <div className="flex items-center justify-center flex-col gap-[40px] my-[80px]">
+          <div className="flex  justify-start flex-col gap-[40px] my-[80px]">
             <RadioBtn
               text="한의사"
               isChecked={selected === "한의사"}
