@@ -12,6 +12,7 @@ import Map from "./pages/map";
 import Select from "./pages/select";
 import StartPage from "./pages/startPage";
 import reportWebVitals from "./reportWebVitals";
+import DoctorDetail from "./pages/doctorDetail";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -26,6 +27,7 @@ root.render(
 
       <Route path="/doctor-home" element={<DoctorHome />} />
       <Route path="/doctor-search" element={<DoctorSearch />} />
+      <Route path="/doctor-detail" element={<DoctorDetail />} />
 
       <Route path="/map" element={<Map />} />
     </Routes>

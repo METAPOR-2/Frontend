@@ -3,8 +3,8 @@ import addIcon from "../assets/icons/addIcon.svg";
 import decreaseIcon from "../assets/icons/decreaseIcon.svg";
 import Logo from "../assets/images/Logo.svg";
 import NavBar from "../components/NavBar";
-import Input from "../components/input";
 import Button from "../components/button";
+import Input from "../components/input";
 
 export default function DoctorSearch() {
   return (
