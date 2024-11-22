@@ -17,13 +17,13 @@ export default function LicenseRegister() {
           의료면허증을 등록해주세요.
         </h1>
         <form>
-          {/* 파일 선택 UI */}
-          <div className="mb-[51px]">
+          <div className="mb-[51px] mt-10">
+            {/* 커스텀 파일 업로드 */}
             <label
               htmlFor="licenseFile"
-              className="w-[334px] h-[56px] p-[20px] bg-gray-50 border-none rounded-[12px] focus:outline-none flex items-center justify-between cursor-pointer"
+              className="w-[334px] h-[56px] p-[20px] bg-gray-50 border border-gray-300 rounded-[12px] focus:outline-none flex items-center justify-between cursor-pointer"
             >
-              <span className="text-gray-500">{fileName}</span>
+              <span>{fileName}</span>
               <span className="bg-[#3F35FF] text-white px-4 py-2 rounded-md text-sm">
                 파일 선택
               </span>
@@ -35,11 +35,7 @@ export default function LicenseRegister() {
               onChange={handleFileChange}
             />
           </div>
-
-          {/* 직접 입력란 */}
-          <Input placeholder="직접 입력하기" />
-
-          {/* 다음 버튼 */}
+          <Input placeholder="직접 입력하기"></Input>
           <div className="mt-[264px]"></div>
           <Button>다음</Button>
         </form>
