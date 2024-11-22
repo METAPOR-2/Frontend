@@ -10,6 +10,7 @@ import Select from "./pages/select";
 import Login from "./pages/login";
 import DoctorProfile from "./pages/doctorProfile";
 import StartPage from "./pages/startPage";
+import Hospitals from "./pages/Hospital";
 import Map from "./pages/map";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -24,6 +25,7 @@ root.render(
       <Route path="/license-register" element={<LicenseRegister />} />
 
       <Route path="/doctor-home" element={<DoctorHome />} />
+      <Route path="/hospital" element={<Hospitals />} />
 
       <Route path="/map" element={<Map />} />
 
