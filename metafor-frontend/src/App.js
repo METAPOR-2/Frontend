@@ -1,12 +1,12 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import Button from "./components/button";
+import { useNavigate } from "react-router-dom";
 
 function App() {
-  const navigate = useNavigate(); // useNavigate 훅 사용
+  const navigate = useNavigate();
 
-  const handleLoginClick = () => {
-    navigate("/license-register"); // 경로 변경
+  const handleLoginclick = () => {
+    navigate("/license-register");
   };
 
   return (
@@ -19,7 +19,7 @@ function App() {
           <h2 className="text-lg font-semibold mb-2">모바일 앱 화면입니다.</h2>
           <p className="text-gray-700">되는 것이겠죠?</p>
 
-          <Button onClick={handleLoginClick}>로그인</Button>
+          <Button onClick={handleLoginclick}>로그인</Button>
         </main>
         <footer className="w-full py-4 bg-gray-800 text-white text-center">
           <p className="text-sm">© 2024 MEDILUX x TAVE Hackaton Team 2</p>
