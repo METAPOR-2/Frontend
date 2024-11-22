@@ -1,10 +1,18 @@
 import React from "react";
 import Doctor1 from "../assets/images/Doctor1.svg";
 import Doctor2 from "../assets/images/Doctor2.svg";
+import { useNavigate } from "react-router-dom";
 
 export default function DoctorInfo({ num = 1 }) {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/doctor-detail"); // 필요한 데이터를 state로 전달
+  };
   return (
-    <div className="max-w-sm rounded overflow-hidden border border-[#F0F1FF] bg-white px-2 py-3 w-[180px] h-[230px] mt-2">
+    <div
+      className="max-w-sm rounded overflow-hidden border border-[#F0F1FF] bg-white px-2 py-3 w-[180px] h-[230px] mt-2 cursor-pointer"
+      onClick={handleClick}
+    >
       <div className="flex items-center flex-col">
         <div className="flex-shrink-0">
           <img

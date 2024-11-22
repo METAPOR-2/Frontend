@@ -47,15 +47,13 @@ export default function DoctorHome() {
               <img src={Location} className="w-[15px] h-[15px]"></img>
               {/* <p className="text-sm text-[#1B12C7] mb-2">dddd</p> */}
             </div>
-            <h3 className="text-[20px] font-semibold mb-2">
-              {`{username}`}님의 신청
-            </h3>
+            <h3 className="text-[20px] font-semibold mb-2">이소님의 신청</h3>
             <div className="flex gap-2">
               <button className="text-black bg-white border border-[#4A58E2] rounded-full w-[63px] h-[26px] px-2 text-[11px] mr-[16px]">
-                치료이름
+                도수치료
               </button>
               <button className="text-black border bg-white border-[#4A58E2] rounded-full w-[63px] h-[26px] px-2 text-[11px]">
-                치료이름
+                물리치료
               </button>
             </div>
             <p
@@ -70,9 +68,7 @@ export default function DoctorHome() {
         {isModalOpen && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
             <div className="bg-white w-[390px] rounded-lg shadow-lg p-6">
-              <h2 className="text-[20px] font-semibold mb-4">
-                {`{username}`}님의 신청
-              </h2>
+              <h2 className="text-[20px] font-semibold mb-4">이소님의 신청</h2>
               <div className="flex justify-between items-center mb-[20px]">
                 <p className="text-gray-900 font-semibold text-[16px]">
                   신청 인원
@@ -144,7 +140,7 @@ export default function DoctorHome() {
             </div>
             <div className="flex justify-between items-center">
               <p className="text-[18px] text-[#1B12C7] font-semibold">
-                {`{username}`}님의 신청
+                이윤오님의 신청
               </p>
               <p className="text-[12px] text-gray-400 font-normal">
                 자세히 보기
@@ -158,7 +154,7 @@ export default function DoctorHome() {
             </div>
             <div className="flex justify-between items-center">
               <p className="text-[18px] text-[#1B12C7] font-semibold">
-                {`{username}`}님의 신청
+                임조이님의 신청
               </p>
               <p className="text-[12px] text-gray-400 font-normal">
                 자세히 보기
