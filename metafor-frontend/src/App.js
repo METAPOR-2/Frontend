@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
-
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+      <header className="w-full py-4 bg-blue-500 text-white text-center">
+        <h1 className="text-xl font-bold">React Mobile App</h1>
       </header>
+      <main className="flex-grow w-full max-w-md px-4">
+        <section className="bg-white p-4 rounded-lg shadow">
+          <h2 className="text-lg font-semibold mb-2">Hello, Mobile!</h2>
+          <p className="text-gray-700">
+            This is a simple mobile-friendly view.
+          </p>
+        </section>
+      </main>
+      <footer className="w-full py-4 bg-gray-800 text-white text-center">
+        <p className="text-sm">© 2024 My App</p>
+      </footer>
     </div>
   );
 }
