@@ -4,9 +4,17 @@ import decreaseIcon from "../assets/icons/decreaseIcon.svg";
 import Logo from "../assets/images/Logo.svg";
 import NavBar from "../components/NavBar";
 import Button from "../components/button";
-import Input from "../components/input";
+import Input from "../components/input2";
+import { useNavigate, useLocation } from "react-router-dom";
 
 export default function DoctorSearch() {
+  const location = useLocation();
+  const { state } = location;
+  const navigate = useNavigate();
+  const handleBtn = () => {
+    navigate("/Customerhomehospital", { state: { data: state.data } });
+  };
+
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100 relative">
       <div className="relative flex flex-col w-[390px] h-[844px] bg-white border border-gray-300 shadow-lg rounded-lg overflow-hidden items-center">
@@ -14,7 +22,10 @@ export default function DoctorSearch() {
         <header className="w-full mt-[70px] mb-[48px] flex flex-col items-center">
           <img src={Logo} alt="Chat" className="w-[103px] " />
         </header>
-        <Input placeholder="어떤 치료가 필요하세요?"></Input>
+        <Input
+          placeholder="어떤 치료가 필요하세요?"
+          defaultValue={state.data}
+        ></Input>
 
         <div className="w-[334px] h-max mt-3 mb-5 p-4 bg-white border border-[#F0F1FF] rounded-[12px]">
           <p className="text-[12px] font-normal text-[#1B12C7] mb-2">
@@ -42,10 +53,10 @@ export default function DoctorSearch() {
             <p className="text-[18px] font-semibold mr-14">11월 22일</p>
           </div>
         </div>
-        <Button>예약 가능한 의료진 찾기</Button>
+        <Button onClick={handleBtn}>예약 가능한 의료진 찾기</Button>
 
         {/* 하단 네비게이션 바 */}
-        <NavBar />
+        <NavBar num={3} />
       </div>
     </div>
   );

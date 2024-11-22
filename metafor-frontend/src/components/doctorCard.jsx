@@ -1,8 +1,16 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function DoctorCard({ image, name, hospital, stack1, stack2 }) {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/doctor-detail"); // 필요한 데이터를 state로 전달
+  };
   return (
-    <div className="max-w-sm rounded-lg border border-[#F0F1FF] bg-white py-2 w-80 flex items-center justify-center ">
+    <div
+      className="max-w-sm rounded-lg border border-[#F0F1FF] bg-white py-2 w-80 flex items-center justify-center cursor-pointer"
+      onClick={handleClick}
+    >
       <div className="flex items-center">
         <div className="pr-2">
           <img className="w-18 h-16 rounded-[12px]" src={image} alt="Doctor" />
@@ -11,7 +19,7 @@ export default function DoctorCard({ image, name, hospital, stack1, stack2 }) {
           <div className="flex flex-row gap-2 items-end">
             <h2 className="text-xl font-bold">{name}</h2>
             <p className="text-gray-500 text-sm mt-3">{hospital}</p>
-            <div className="pl-6 mt-3">♡</div>
+            <div className="pl-6 mt-3 text-[#3F35FF]">♡</div>
           </div>
           <div className="flex items-center text-[#3F35FF]">
             <span>★</span>

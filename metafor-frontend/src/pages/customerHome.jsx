@@ -1,7 +1,7 @@
 import Button from "../components/button";
 import { useState } from "react";
 import Logo from "../assets/images/Logo.svg";
-import Input from "../components/input";
+import Input from "../components/input2";
 import { useNavigate } from "react-router-dom";
 import Circle from "../components/circle";
 import NavBar from "../components/NavBar";
@@ -16,19 +16,23 @@ export default function CustomerHome() {
           <img src={Logo} alt="Chat" className="w-[103px] " />
         </header>
         <div className="flex items-center justify-center flex-col gap-2 ">
-          <Input placeholder="어떤 치료가 필요하세요?" Icon2={SearchIcon} />
+          <Input
+            placeholder="어떤 치료가 필요하세요?"
+            Icon2={SearchIcon}
+            doctor={1}
+          />
           <div className="text-[#1B12C7] text-[12px] w-full flex justify-start  pl-12">
             가장 많이 검색된 치료에요.
           </div>
           <div className="flex flex-row gap-2 w-full flex justify-start justify-start pl-12">
             <div className="inline-flex h-[26px] px-[15px] py-[5px] justify-center items-center gap-[10px] flex-shrink-0 rounded-[13px] border border-[#5260FF] text-[#000] text-[11px] font-[500] leading-[14px] text-center ">
-              치료이름1
+              물리치료
             </div>
             <div className="inline-flex h-[26px] px-[15px] py-[5px] justify-center items-center gap-[10px] flex-shrink-0 rounded-[13px] border border-[#5260FF] text-[#000] text-[11px] font-[500] leading-[14px] text-center ">
-              치료이름2
+              부항치료
             </div>
             <div className="inline-flex h-[26px] px-[15px] py-[5px] justify-center items-center gap-[10px] flex-shrink-0 rounded-[13px] border border-[#5260FF] text-[#000] text-[11px] font-[500] leading-[14px] text-center ">
-              치료이름3
+              도수치료
             </div>
           </div>
           <div className="text-[#1F1F1F] text-[22px] font-semibold leading-normal w-full flex justify-start  pl-12 pt-8">
@@ -48,10 +52,8 @@ export default function CustomerHome() {
               className="w-[334px] h-[68px] bg-[#F7F8FF] rounded-lg p-4 mb-4 flex justify-between items-center relative"
             >
               <div>
-                <p className="text-sm text-[#3F35FF] mb-2">{`{location}`}</p>
-                <h3 className="text-md font-semibold">
-                  {`{username}`}님의 신청
-                </h3>
+                <p className="text-sm text-[#3F35FF] mb-2">서울특별시 마포구</p>
+                <h3 className="text-md font-semibold">이소님의 신청</h3>
               </div>
               <button className="absolute top-2 right-4 text-[#9B9B9B] text-sm">
                 자세히 보기

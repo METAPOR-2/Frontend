@@ -7,6 +7,7 @@ import StarIcon from "../assets/icons/starIcon.svg";
 import DoctorDefault from "../assets/images/Doctordefault.svg";
 import teraphy from "../assets/images/therapy.svg";
 import NavBar from "../components/NavBar";
+import Doctor4 from "../assets/images/Doctor4.svg";
 
 export default function DoctorDetail() {
   const [activeTab, setActiveTab] = useState("info"); // 상태 관리: 'info' 또는 'review'
@@ -20,9 +21,9 @@ export default function DoctorDetail() {
       <div className="w-[390px] bg-white p-5 pl-7 pr-7">
         <div className="flex justify-between items-start">
           <div className="flex items-center">
-            <h1 className="text-[20px] font-semibold">오명준 원장</h1>
+            <h1 className="text-[20px] font-semibold">김동래 원장</h1>
             <p className="text-gray-500 font-semibold text-[12px] ml-3">
-              오케이한방병원
+              동래한방병원
             </p>
           </div>
           <div className="text-[#3F35FF] text-sm flex items-center gap-1">
@@ -213,7 +214,7 @@ export default function DoctorDetail() {
         </div>
       </div>
 
-      <NavBar />
+      <NavBar num={3} />
     </div>
   );
 }
