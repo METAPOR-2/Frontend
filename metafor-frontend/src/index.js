@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import App from "./App";
 import "./index.css";
+import DoctorHome from "./pages/doctorHome";
 import LicenseRegister from "./pages/license_register";
 import reportWebVitals from "./reportWebVitals";
 import Select from "./pages/select";
@@ -21,7 +22,11 @@ root.render(
       <Route path="/doctorprofile" element={<DoctorProfile />} />
       <Route path="/startpage" element={<StartPage />} />
       <Route path="/license-register" element={<LicenseRegister />} />
+
+      <Route path="/doctor-home" element={<DoctorHome />} />
+
       <Route path="/map" element={<Map />} />
+
     </Routes>
   </BrowserRouter>
 );
