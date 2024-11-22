@@ -11,7 +11,7 @@ export default function Input({ placeholder = "", type = "text", Icon }) {
       )}
       {/* 입력 필드 */}
       <input
-        className="w-full h-full pl-12 pr-4 bg-gray-50 border-none rounded-[12px] focus:outline-none placeholder-gray-500 text-[16px]"
+        className="w-full h-full pl-8 pr-4 bg-gray-50 border-none rounded-[12px] focus:outline-none placeholder-gray-500 text-[16px]"
         type={type}
         placeholder={placeholder}
       />
