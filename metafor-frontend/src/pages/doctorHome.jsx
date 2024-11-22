@@ -106,13 +106,20 @@ export default function DoctorHome() {
                 <img src={Location} className="w-[15px] h-[15px] ml-2"></img>
               </div>
               <img src={Map} className="w-[334px] h-[300px] mb-3"></img>
-
-              <button
-                className="w-full bg-[#4A58E2] text-white py-2 rounded-lg"
-                onClick={handleCloseModal} // 클릭 시 모달 닫기
-              >
-                닫기
-              </button>
+              <div className="flex justify-between gap-2">
+                <button
+                  className="w-full bg-[#4A58E2] text-white py-2 rounded-lg"
+                  onClick={handleCloseModal} // 클릭 시 모달 닫기
+                >
+                  수락
+                </button>
+                <button
+                  className="w-full bg-white border border-blue-600 text-blue-600 py-2 rounded-lg"
+                  onClick={handleCloseModal} // 클릭 시 모달 닫기
+                >
+                  거절
+                </button>
+              </div>
             </div>
           </div>
         )}
