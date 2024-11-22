@@ -1,7 +1,7 @@
 function App() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-      <header className="w-full py-4 bg-blue-500 text-white text-center">
+      <header className="w-full py-4 bg-black-100 text-white text-center">
         <h1 className="text-xl font-bold">MOISO</h1>
       </header>
       <main className="flex-grow w-full max-w-md px-4">
