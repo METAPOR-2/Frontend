@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import AiIcon from "../assets/icons/AiIcon.svg";
 import Location from "../assets/icons/locationIcon.svg";
 import Logo from "../assets/images/Logo.svg";
+import Map from "../assets/images/Map.png";
 import NavBar from "../components/NavBar";
 
 export default function DoctorHome() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100 relative">
       <div className="relative flex flex-col w-[390px] h-[844px] bg-white border border-gray-300 shadow-lg rounded-lg overflow-hidden">
@@ -48,11 +58,64 @@ export default function DoctorHome() {
                 치료이름
               </button>
             </div>
-            <p className="text-[12px] text-gray-400 font-normal text-right">
+            <p
+              className="text-[12px] text-gray-400 font-normal cursor-pointer text-right"
+              onClick={handleOpenModal} // 클릭 시 모달 열기
+            >
               자세히 보기
             </p>
           </div>
         </section>
+        {/*모달*/}
+        {isModalOpen && (
+          <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+            <div className="bg-white w-[390px] rounded-lg shadow-lg p-6">
+              <h2 className="text-[20px] font-semibold mb-4">
+                {`{username}`}님의 신청
+              </h2>
+              <div className="flex justify-between items-center mb-[20px]">
+                <p className="text-gray-900 font-semibold text-[16px]">
+                  신청 인원
+                </p>
+                <p className="text-[#3F35FF] font-bold text-[18px]">14명</p>
+              </div>
+              <div className="flex justify-between items-center mb-[20px]">
+                <p className="text-gray-900 font-semibold text-[16px]">
+                  신청 일자
+                </p>
+                <p className="text-[#3F35FF] font-bold text-[18px]">
+                  11월 23일 토요일
+                </p>
+              </div>
+              <p className="text-gray-900 font-semibold text-[16px] mb-3">
+                신청 항목
+              </p>
+              <div className="flex gap-2 mb-2">
+                <button className="text-black bg-white border border-[#4A58E2] rounded-[8px] w-[63px] h-[26px] px-2 text-[11px]">
+                  뜸 치료
+                </button>
+                <button className="text-black border bg-white border-[#4A58E2] rounded-[8px] w-[63px] h-[26px] px-2 text-[11px]">
+                  침 치료
+                </button>
+                <button className="text-black border bg-white border-[#4A58E2] rounded-[8px] w-[63px] h-[26px] px-2 text-[11px]">
+                  부항치료
+                </button>
+              </div>
+              <div className="flex items-center mb-[10px]">
+                <p className="text-gray-900 font-semibold text-[16px]">위치</p>
+                <img src={Location} className="w-[15px] h-[15px] ml-2"></img>
+              </div>
+              <img src={Map} className="w-[334px] h-[300px] mb-3"></img>
+
+              <button
+                className="w-full bg-[#4A58E2] text-white py-2 rounded-lg"
+                onClick={handleCloseModal} // 클릭 시 모달 닫기
+              >
+                닫기
+              </button>
+            </div>
+          </div>
+        )}
 
         {/* 신청관리 섹션 */}
         <section className="px-6 mb-5">
