@@ -4,7 +4,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import App from "./App";
 import "./index.css";
 import DoctorHome from "./pages/doctorHome";
-import DoctorList from "./pages/doctorList";
 import DoctorProfile from "./pages/doctorProfile";
 import DoctorSearch from "./pages/doctorSearch";
 import LicenseRegister from "./pages/license_register";
@@ -26,7 +25,6 @@ root.render(
       <Route path="/license-register" element={<LicenseRegister />} />
 
       <Route path="/doctor-home" element={<DoctorHome />} />
-      <Route path="/doctor-list" element={<DoctorList />} />
       <Route path="/doctor-search" element={<DoctorSearch />} />
 
       <Route path="/map" element={<Map />} />
