@@ -17,7 +17,7 @@ export default function NavBar({ num = 1 }) {
             WebkitMaskImage: `url(${HomeIcon})`,
             WebkitMaskRepeat: "no-repeat",
             WebkitMaskSize: "contain",
-            backgroundColor: `${num == 1 ? "#3F35FF" : "#DEE4FF"}`, // 원하는 색상
+            backgroundColor: `${num == 1 ? "#3F35FF" : "#DEE4FF"}`,
           }}
         ></div>
       </Link>
