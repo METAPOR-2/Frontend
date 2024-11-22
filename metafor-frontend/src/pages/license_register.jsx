@@ -2,12 +2,17 @@ import React from "react";
 import Button from "../components/button";
 import Circle from "../components/circle";
 import Input from "../components/input";
+import { useNavigate } from "react-router-dom";
 
 // 아이콘 파일 가져오기
 import CameraIcon from "../assets/icons/CameraIcon.svg";
 import writeIcon from "../assets/icons/writeIcon.svg";
 
 export default function LicenseRegister() {
+  const navigator = useNavigate();
+  const handleBtn = () => {
+    navigator("/doctorprofile");
+  };
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <div className="relative flex flex-col w-[390px] h-[844px] bg-gray-50 border border-gray-300 shadow-lg rounded-lg overflow-hidden">
@@ -24,7 +29,7 @@ export default function LicenseRegister() {
             {/* 직접 입력하기 */}
             <Input placeholder="직접 입력하기" Icon={writeIcon} />
             <div className="mt-[264px]"></div>
-            <Button>등록하기</Button>
+            <Button onClick={handleBtn}>등록하기</Button>
           </form>
         </main>
       </div>
