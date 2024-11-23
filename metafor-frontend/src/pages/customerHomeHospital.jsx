@@ -1,17 +1,13 @@
-import Button from "../components/button";
-import { useState } from "react";
-import Logo from "../assets/images/Logo.svg";
-import Input from "../components/input2";
-import { useNavigate, useLocation } from "react-router-dom";
-import Circle from "../components/circle";
-import NavBar from "../components/NavBar";
-import DoctorInfo from "../components/doctorinfo";
-import SearchIcon from "../assets/icons/Search.svg";
+import { useLocation } from "react-router-dom";
 import FilterIcon from "../assets/icons/Filter.svg";
-import DoctorCard from "../components/doctorCard";
+import SearchIcon from "../assets/icons/Search.svg";
 import Doctor3 from "../assets/images/Doctor3.svg";
 import Doctor4 from "../assets/images/Doctor4.svg";
 import Doctor5 from "../assets/images/Doctor5.svg";
+import Logo from "../assets/images/Logo.svg";
+import NavBar from "../components/NavBar";
+import DoctorCard from "../components/doctorCard";
+import Input from "../components/input2";
 
 export default function CustomerHomeHospital() {
   const location = useLocation();

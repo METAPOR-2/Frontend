@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom"; // 예약 버튼의 네비게이션
 import clockIcon from "../assets/icons/clockIcon.svg";
 import LocationIcon from "../assets/icons/locationIcon_fill.svg";
 import phoneIcon from "../assets/icons/phoneIcon.svg";
@@ -7,10 +6,14 @@ import StarIcon from "../assets/icons/starIcon.svg";
 import DoctorDefault from "../assets/images/Doctordefault.svg";
 import teraphy from "../assets/images/therapy.svg";
 import NavBar from "../components/NavBar";
-import Doctor4 from "../assets/images/Doctor4.svg";
 
 export default function DoctorDetail() {
   const [activeTab, setActiveTab] = useState("info"); // 상태 관리: 'info' 또는 'review'
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // const reservationClickHandler = {
+
+  // }
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center">
@@ -49,12 +52,12 @@ export default function DoctorDetail() {
         </div>
 
         {/* 예약 버튼 */}
-        <Link
-          to="/reservation"
-          className="mt-4 block bg-[#3F35FF] text-white text-[16px] font-bold text-center py-2 rounded-lg"
+        <button
+          className="w-full mt-4 block bg-[#3F35FF] text-white text-[16px] font-bold text-center py-2 rounded-lg"
+          // onClick={reservationClickHandler}
         >
           예약하기
-        </Link>
+        </button>
       </div>
 
       {/* 정보와 리뷰 탭 */}
