@@ -5,8 +5,10 @@ import Input from "../components/input";
 import { useNavigate } from "react-router-dom";
 import Circle from "../components/circle";
 import MapImg from "../assets/images/Map.png";
+import KakaoMap from "../components/KakaoMap";
 
 export default function Map() {
+  //<img src={MapImg} className="w-[334px] h-[334px]" />
   const navigator = useNavigate();
   const hadleLogin = () => {
     navigator("/doctor-home");
@@ -31,7 +33,7 @@ export default function Map() {
             </div>
           </div>
 
-          <img src={MapImg} className="w-[334px] h-[334px]" />
+          <KakaoMap />
           <Button children={"시작하기"} onClick={hadleLogin} />
         </main>
       </div>
