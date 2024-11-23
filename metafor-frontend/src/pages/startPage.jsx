@@ -1,22 +1,18 @@
-import Button from "../components/button";
 import { useState } from "react";
-import Logo from "../assets/images/Logo.svg";
 import { useNavigate } from "react-router-dom";
+import Logo from "../assets/images/Logo.svg";
 import Profile from "../assets/images/Profile.svg";
-import Shield from "../assets/images/Shield.svg";
-import SelectShield from "../assets/images/SelectShield.svg";
 import SelectProfile from "../assets/images/SelectProfile.svg";
+import SelectShield from "../assets/images/SelectShield.svg";
+import Shield from "../assets/images/Shield.svg";
+import Button from "../components/button";
 
 export default function StartPage() {
-  const [selected, setSelected] = useState("profile"); // "profile" 또는 "shield"
-  const navigator = useNavigate();
+  const [isDoctor, setIsDoctor] = useState(false); // 의료인 여부
+  const navigate = useNavigate();
 
-  const handleSelect = (type) => {
-    setSelected(type);
-  };
-
-  const handleLogin = () => {
-    navigator("/Login");
+  const handleNext = () => {
+    navigate("/login", { state: { isDoctor } }); // Login 페이지로 `isDoctor` 값 전달
   };
 
   return (
@@ -28,22 +24,18 @@ export default function StartPage() {
             {/* Profile Section */}
             <div
               className={`flex items-center justify-center flex-col w-[158px] h-[186px] cursor-pointer ${
-                selected === "profile"
-                  ? "border-2 border-[#8486FF] rounded-lg"
-                  : ""
+                !isDoctor ? "border-2 border-[#8486FF] rounded-lg" : ""
               }`}
-              onClick={() => handleSelect("profile")}
+              onClick={() => setIsDoctor(false)}
             >
               <img
-                src={selected === "profile" ? SelectProfile : Profile}
+                src={!isDoctor ? SelectProfile : Profile}
                 alt="Profile"
                 className="w-45 h-8 mb-4"
               />
               <div
                 className={`${
-                  selected === "profile"
-                    ? "text-black font-semibold "
-                    : "text-gray-500"
+                  !isDoctor ? "text-black font-semibold" : "text-gray-500"
                 }`}
               >
                 선생님이 필요해요.
@@ -53,22 +45,18 @@ export default function StartPage() {
             {/* Shield Section */}
             <div
               className={`flex items-center justify-center flex-col w-[158px] h-[186px] cursor-pointer ${
-                selected === "shield"
-                  ? "border-2 border-[#8486FF] rounded-lg"
-                  : ""
+                isDoctor ? "border-2 border-[#8486FF] rounded-lg" : ""
               }`}
-              onClick={() => handleSelect("shield")}
+              onClick={() => setIsDoctor(true)}
             >
               <img
-                src={selected === "shield" ? SelectShield : Shield}
+                src={isDoctor ? SelectShield : Shield}
                 alt="Shield"
                 className="w-45 h-8 mb-4"
               />
               <div
                 className={`${
-                  selected === "shield"
-                    ? "text-black font-semibold "
-                    : "text-gray-500"
+                  isDoctor ? "text-black font-semibold" : "text-gray-500"
                 }`}
               >
                 의료인이에요.
@@ -76,11 +64,8 @@ export default function StartPage() {
             </div>
           </div>
           <Button
-            children={`${
-              selected === "shield" ? "의료인" : "진료인"
-            }으로 시작하기
-              `}
-            onClick={handleLogin}
+            children={`${isDoctor ? "의료인" : "진료인"}으로 시작하기`}
+            onClick={handleNext}
           />
         </main>
       </div>

@@ -7,7 +7,7 @@ import DoctorHome from "./pages/doctorHome";
 import DoctorProfile from "./pages/doctorProfile";
 import DoctorSearch from "./pages/doctorSearch";
 import LicenseRegister from "./pages/license_register";
-import Login from "./pages/login";
+import Login from "./pages/Signup";
 import Map from "./pages/map";
 import Select from "./pages/select";
 import StartPage from "./pages/startPage";

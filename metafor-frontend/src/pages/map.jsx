@@ -1,10 +1,7 @@
-import Button from "../components/button";
-import { useState } from "react";
-import Logo from "../assets/images/Logo.svg";
-import Input from "../components/input";
 import { useNavigate } from "react-router-dom";
-import Circle from "../components/circle";
 import MapImg from "../assets/images/Map.png";
+import Button from "../components/button";
+import Circle from "../components/circle";
 
 export default function Map() {
   const navigator = useNavigate();
