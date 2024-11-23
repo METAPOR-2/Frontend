@@ -1,8 +1,8 @@
 import Button from "../components/button";
 import { useState } from "react";
 import Logo from "../assets/images/Logo.svg";
-import Input from "../components/input";
-import { useNavigate } from "react-router-dom";
+import Input from "../components/input2";
+import { useNavigate, useLocation } from "react-router-dom";
 import Circle from "../components/circle";
 import NavBar from "../components/NavBar";
 import DoctorInfo from "../components/doctorinfo";
@@ -14,6 +14,8 @@ import Doctor4 from "../assets/images/Doctor4.svg";
 import Doctor5 from "../assets/images/Doctor5.svg";
 
 export default function CustomerHomeHospital() {
+  const location = useLocation();
+  const { state } = location;
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100 relative">
       <div className="relative flex flex-col w-[390px] h-[844px] bg-white border border-gray-300 shadow-lg rounded-lg overflow-hidden">
@@ -21,7 +23,7 @@ export default function CustomerHomeHospital() {
           <img src={Logo} alt="Chat" className="w-[103px] " />
         </header>
         <div className="flex items-center justify-center flex-col gap-2 ">
-          <Input Icon2={SearchIcon} />
+          <Input Icon2={SearchIcon} defaultValue={state.data} />
           <div className="flex flex-row gap-2 w-full flex justify-start pl-7 pt-3">
             <div className="inline-flex h-[26px] pl-[10px] pr-[12px] py-[5px] justify-center items-center gap-1 flex-shrink-0 rounded-[8px] border border-[#C0C5FF] text-[#3F35FF] text-[11px] font-[500] leading-[14px] text-center bg">
               <img src={FilterIcon} />

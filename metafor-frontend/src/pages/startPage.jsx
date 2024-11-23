@@ -64,8 +64,10 @@ export default function StartPage() {
             </div>
           </div>
           <Button
-            children={`${isDoctor ? "의료인" : "진료인"}으로 시작하기`}
-            onClick={handleNext}
+            children={`${selected === "shield" ? "의료인" : "고객"}으로 시작하기
+              `}
+            onClick={handleLogin}
+
           />
         </main>
       </div>

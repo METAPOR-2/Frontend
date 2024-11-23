@@ -1,9 +1,13 @@
 import { useNavigate } from "react-router-dom";
 import MapImg from "../assets/images/Map.png";
+
 import Button from "../components/button";
 import Circle from "../components/circle";
+import KakaoMap from "../components/KakaoMap";
+
 
 export default function Map() {
+  //<img src={MapImg} className="w-[334px] h-[334px]" />
   const navigator = useNavigate();
   const hadleLogin = () => {
     navigator("/doctor-home");
@@ -18,17 +22,17 @@ export default function Map() {
           </div>
           <div className="flex flex-row gap-2">
             <div className="inline-flex h-[26px] px-[15px] py-[5px] justify-center items-center gap-[10px] flex-shrink-0 rounded-[13px] border border-[#5260FF] text-[#000] text-[11px] font-[500] leading-[14px] text-center ">
-              경기도 / 화성시 / 남양읍
+              서울특별시
             </div>
             <div className="inline-flex h-[26px] px-[15px] py-[5px] justify-center items-center gap-[10px] flex-shrink-0 rounded-[13px] border border-[#5260FF] text-[#000] text-[11px] font-[500] leading-[14px] text-center ">
-              경기도 / 수원시
+              서울특별시 / 마포구
             </div>
             <div className="font-bold inline-flex h-[26px] px-[15px] py-[5px] justify-center items-center gap-[10px] flex-shrink-0 rounded-[13px] border border-[#F1F1F1] bg-[#F1F1F1] text-[#6C6C6C] text-[11px] font-[500] leading-[14px] text-center">
               +
             </div>
           </div>
 
-          <img src={MapImg} className="w-[334px] h-[334px]" />
+          <KakaoMap />
           <Button children={"시작하기"} onClick={hadleLogin} />
         </main>
       </div>
