@@ -26,6 +26,18 @@ export const signUpUser = async (userData) => {
   }
 };
 
+// 로그인 API 호출
+export const signInUser = async (loginData) => {
+  try {
+    const response = await api.post("/user/login", loginData);
+    console.log("로그인 응답 데이터:", response.data); // 응답 확인
+    return response.data; // 로그인 응답 데이터 반환
+  } catch (error) {
+    console.error("로그인 API 호출 오류:", error);
+    throw error.response ? error.response.data : new Error("네트워크 오류");
+  }
+};
+
 // 의사 정보 등록
 export const registerDoctor = async (doctorData, token) => {
   if (!token) {

@@ -7,7 +7,8 @@ import DoctorHome from "./pages/doctorHome";
 import DoctorProfile from "./pages/doctorProfile";
 import DoctorSearch from "./pages/doctorSearch";
 import LicenseRegister from "./pages/license_register";
-import Login from "./pages/Signup";
+import Signup from "./pages/Signup";
+import Login from "./pages/login";
 import Map from "./pages/map";
 import Select from "./pages/select";
 import StartPage from "./pages/startPage";
@@ -22,6 +23,7 @@ root.render(
     <Routes>
       <Route path="/" element={<StartPage />} />
       <Route path="/select" element={<Select />} />
+      <Route path="/signup" element={<Signup />} />
       <Route path="/login" element={<Login />} />
       <Route path="/doctorprofile" element={<DoctorProfile />} />
       <Route path="/startpage" element={<StartPage />} />

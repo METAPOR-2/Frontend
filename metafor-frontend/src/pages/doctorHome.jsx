@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import AiIcon from "../assets/icons/AiIcon.svg";
 import Location from "../assets/icons/locationIcon.svg";
 import Logo from "../assets/images/Logo.svg";
-import Map from "../assets/images/Map.png";
+import KakaoMap from "../components/KakaoMap";
 import NavBar from "../components/NavBar";
 
 export default function DoctorHome() {
@@ -48,7 +48,7 @@ export default function DoctorHome() {
               {/* <p className="text-sm text-[#1B12C7] mb-2">dddd</p> */}
             </div>
             <h3 className="text-[20px] font-semibold mb-2">이소님의 신청</h3>
-            <div className="flex gap-2">
+            <div className="flex">
               <button className="text-black bg-white border border-[#4A58E2] rounded-full w-[63px] h-[26px] px-2 text-[11px] mr-[16px]">
                 도수치료
               </button>
@@ -101,7 +101,7 @@ export default function DoctorHome() {
                 <p className="text-gray-900 font-semibold text-[16px]">위치</p>
                 <img src={Location} className="w-[15px] h-[15px] ml-2"></img>
               </div>
-              <img src={Map} className="w-[334px] h-[300px] mb-3"></img>
+              <KakaoMap></KakaoMap>
               <div className="flex justify-between gap-2">
                 <button
                   className="w-full bg-[#4A58E2] text-white py-2 rounded-lg"
