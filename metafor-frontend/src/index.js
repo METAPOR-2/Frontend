@@ -17,12 +17,13 @@ import DoctorDetail from "./pages/doctorDetail";
 import CustomerHome from "./pages/customerHome";
 import CustomerHomeHospital from "./pages/customerHomeHospital";
 import Calendar from "./pages/calendar";
+import SplashScreen from "./pages/splashScreen";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<StartPage />} />
+      <Route path="/" element={<SplashScreen/>}/>
       <Route path="/select" element={<Select />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/login" element={<Login />} />
