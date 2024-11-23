@@ -8,8 +8,13 @@ import Shield from "../assets/images/Shield.svg";
 import Button from "../components/button";
 
 export default function StartPage() {
-  const [isDoctor, setIsDoctor] = useState(false); // 의료인 여부
+  const [selected, setSelected] = useState("profile"); // "profile" 또는 "shield"
   const navigate = useNavigate();
+  const [isDoctor, setIsDoctor] = useState(false);
+
+  const handleSelect = (type) => {
+    setSelected(type);
+  };
 
   const handleNext = () => {
     navigate("/login", { state: { isDoctor } }); // Login 페이지로 `isDoctor` 값 전달
@@ -64,10 +69,9 @@ export default function StartPage() {
             </div>
           </div>
           <Button
-            children={`${selected === "shield" ? "의료인" : "고객"}으로 시작하기
+            children={`${selected === "shield" ? "의료인" : "의료인"}으로 시작하기
               `}
-            onClick={handleLogin}
-
+            onClick={handleNext}
           />
         </main>
       </div>
