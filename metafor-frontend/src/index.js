@@ -1,29 +1,29 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import App from "./App";
 import "./index.css";
+import Signup from "./pages/Signup";
+import Calendar from "./pages/calendar";
+import CustomerHome from "./pages/customerHome";
+import CustomerHomeHospital from "./pages/customerHomeHospital";
+import DoctorDetail from "./pages/doctorDetail";
 import DoctorHome from "./pages/doctorHome";
 import DoctorProfile from "./pages/doctorProfile";
 import DoctorSearch from "./pages/doctorSearch";
+import EndingPage from "./pages/endingPage";
 import LicenseRegister from "./pages/license_register";
-import Signup from "./pages/Signup";
 import Login from "./pages/login";
 import Map from "./pages/map";
 import Select from "./pages/select";
+import SplashScreen from "./pages/splashScreen";
 import StartPage from "./pages/startPage";
 import reportWebVitals from "./reportWebVitals";
-import DoctorDetail from "./pages/doctorDetail";
-import CustomerHome from "./pages/customerHome";
-import CustomerHomeHospital from "./pages/customerHomeHospital";
-import Calendar from "./pages/calendar";
-import SplashScreen from "./pages/splashScreen";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<SplashScreen/>}/>
+      <Route path="/" element={<SplashScreen />} />
       <Route path="/select" element={<Select />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/login" element={<Login />} />
@@ -38,6 +38,7 @@ root.render(
       <Route path="/customerhome" element={<CustomerHome />} />
       <Route path="/customerhomehospital" element={<CustomerHomeHospital />} />
       <Route path="/calendar" element={<Calendar />} />
+      <Route path="/ending-page" element={<EndingPage />} />
     </Routes>
   </BrowserRouter>
 );

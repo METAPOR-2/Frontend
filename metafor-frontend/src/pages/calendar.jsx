@@ -1,13 +1,8 @@
 import React from "react";
-import addIcon from "../assets/icons/addIcon.svg";
-import decreaseIcon from "../assets/icons/decreaseIcon.svg";
+import { useLocation, useNavigate } from "react-router-dom";
+import CalendarImg from "../assets/images/Calendar.svg";
 import Logo from "../assets/images/Logo.svg";
 import NavBar from "../components/NavBar";
-import Button from "../components/button";
-import Input from "../components/input2";
-import { useNavigate, useLocation } from "react-router-dom";
-import CalendarImg from "../assets/images/Calendar.svg";
-import LocationIcon from "../assets/icons/locationIcon.svg";
 
 export default function Calendar() {
   const location = useLocation();
@@ -16,13 +11,21 @@ export default function Calendar() {
   const handleBtn = () => {
     navigate("/Customerhomehospital", { state: { data: state.data } });
   };
+  const LogoClick = () => {
+    navigate("/ending-page");
+  };
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100 relative">
       <div className="relative flex flex-col w-[390px] h-[844px] bg-white border border-gray-300 shadow-lg rounded-lg overflow-hidden items-center">
         {/* 상단 로고 및 섹션 */}
         <header className="w-full mt-[70px] mb-[48px] flex flex-col items-center">
-          <img src={Logo} alt="Chat" className="w-[103px] " />
+          <img
+            src={Logo}
+            alt="Chat"
+            className="w-[103px] cursor-pointer"
+            onClick={LogoClick}
+          />
         </header>
         <img src={CalendarImg} className="w-[334px] h-[333px]" />
         <div className="text-[#1F1F1F] text-[18px] font-semibold leading-normal w-full flex justify-start  pl-12 pt-11">
