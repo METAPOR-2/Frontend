@@ -16,6 +16,7 @@ import reportWebVitals from "./reportWebVitals";
 import DoctorDetail from "./pages/doctorDetail";
 import CustomerHome from "./pages/customerHome";
 import CustomerHomeHospital from "./pages/customerHomeHospital";
+import Calendar from "./pages/calendar";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -35,6 +36,7 @@ root.render(
       <Route path="/map" element={<Map />} />
       <Route path="/customerhome" element={<CustomerHome />} />
       <Route path="/customerhomehospital" element={<CustomerHomeHospital />} />
+      <Route path="/calendar" element={<Calendar />} />
     </Routes>
   </BrowserRouter>
 );
