@@ -5,15 +5,22 @@ import phoneIcon from "../assets/icons/phoneIcon.svg";
 import StarIcon from "../assets/icons/starIcon.svg";
 import DoctorDefault from "../assets/images/Doctordefault.svg";
 import teraphy from "../assets/images/therapy.svg";
+import KakaoMap from "../components/KakaoMap";
 import NavBar from "../components/NavBar";
 
 export default function DoctorDetail() {
   const [activeTab, setActiveTab] = useState("info"); // 상태 관리: 'info' 또는 'review'
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [peopleCount, setPeopleCount] = useState(12); // 신청 인원
+  const [selectedTime, setSelectedTime] = useState("12:00"); // 선택된 시간
 
-  // const reservationClickHandler = {
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
 
-  // }
+  const incrementPeople = () => setPeopleCount(peopleCount + 1); // 신청 인원 증가
+  const decrementPeople = () => {
+    if (peopleCount > 1) setPeopleCount(peopleCount - 1); // 신청 인원 감소 (최소 1명)
+  };
 
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col items-center">
@@ -54,11 +61,102 @@ export default function DoctorDetail() {
         {/* 예약 버튼 */}
         <button
           className="w-full mt-4 block bg-[#3F35FF] text-white text-[16px] font-bold text-center py-2 rounded-lg"
-          // onClick={reservationClickHandler}
+          onClick={openModal}
         >
           예약하기
         </button>
       </div>
+
+      {isModalOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+          <div className="bg-white w-[360px] p-6 rounded-lg shadow-lg relative">
+            <button
+              className="absolute top-4 right-4 text-gray-500 text-lg"
+              onClick={closeModal}
+            >
+              ✕
+            </button>
+            <h2 className="text-[20px] font-semibold mb-6">예약하기</h2>
+            <div className="space-y-4">
+              {/* 신청 인원 */}
+              <div className="flex justify-between items-center">
+                <p className="text-[16px] font-semibold">신청 인원</p>
+                <div className="flex items-center">
+                  <button
+                    className="text-[18px] font-bold bg-white border border-blue-500 rounded-full w-8 h-8 flex items-center justify-center"
+                    onClick={decrementPeople}
+                  >
+                    -
+                  </button>
+                  <span className="mx-4">{peopleCount}명</span>
+                  <button
+                    className="text-[18px] font-bold bg-white border border-blue-500 rounded-full w-8 h-8 flex items-center justify-center"
+                    onClick={incrementPeople}
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
+
+              {/* 신청 날짜 */}
+              <div className="flex justify-between items-center">
+                <p className="text-[16px] font-semibold">신청 일자</p>
+                <p className="text-[16px]">12월 07일</p>
+              </div>
+
+              {/* 진료 시간 */}
+              <div>
+                <p className="text-[16px] font-semibold mb-2">진료 시간</p>
+                <div className="flex gap-3">
+                  {["11:00", "12:00", "16:00", "17:00"].map((time) => (
+                    <button
+                      key={time}
+                      className={`text-[16px] px-4 py-2 rounded-lg ${
+                        selectedTime === time
+                          ? "bg-[#3F35FF] text-white"
+                          : "bg-gray-200 text-gray-700"
+                      }`}
+                      onClick={() => setSelectedTime(time)}
+                    >
+                      {time}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* 진료 항목 */}
+              <div>
+                <p className="text-[16px] font-semibold mb-2">신청 진료</p>
+                <div className="flex gap-2 flex-wrap">
+                  <button className="text-[14px] border border-[#3F35FF] text-[#3F35FF] px-3 py-1 rounded-full">
+                    뜸 치료
+                  </button>
+                  <button className="text-[14px] border border-[#3F35FF] text-[#3F35FF] px-3 py-1 rounded-full">
+                    침 치료
+                  </button>
+                  <button className="text-[14px] border border-[#3F35FF] text-[#3F35FF] px-3 py-1 rounded-full">
+                    부항 치료
+                  </button>
+                </div>
+              </div>
+
+              {/* 내 위치 */}
+              <div>
+                <p className="text-[16px] font-semibold mb-2">내 위치</p>
+                <p className="text-[14px] text-gray-500 mb-2">서울시</p>
+                <KakaoMap width="300px" height="240px"></KakaoMap>
+              </div>
+            </div>
+            {/* 예약 버튼 */}
+            <button
+              className="w-full mt-6 bg-[#3F35FF] text-white py-2 rounded-lg"
+              onClick={closeModal}
+            >
+              예약 완료
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* 정보와 리뷰 탭 */}
       <div className="w-[390px] bg-white p-4">

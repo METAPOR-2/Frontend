@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 const { kakao } = window;
 
-const KakaoMap = () => {
+const KakaoMap = ({ width = "334px", height = "334px" }) => {
   useEffect(() => {
     // Kakao Maps API 로드
     const script = document.createElement("script");
@@ -49,7 +49,8 @@ const KakaoMap = () => {
   return (
     <div
       id="map"
-      className="w-[334px] h-[334px] border rounded-lg shadow-lg"
+      className="border rounded-lg shadow-lg"
+      style={{ width, height }}
     ></div>
   );
 };
